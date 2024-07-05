@@ -6,9 +6,10 @@ This Python script utilizes transformer-based models from the Hugging Face Trans
 
 1. **Model Selection**: Incorporate options to select between different pre-trained models like BERT, GPT, or T5, showcasing the ability to implement and compare various AI models.
 2. **Interactive User Input**: Allow users to input text directly or provide a URL to a webpage for summarization, demonstrating skills in handling and processing user inputs.
-3. **Summarization Options**: Provide settings for the length of the summary, the style (e.g., bullet points or a paragraph), and whether to focus on specific themes or keywords.
+3. **Summarization Options**: Provide settings for the length of the summary, the style (e.g., bullet points or a paragraph), and whether to use sampling for generation.
 4. **Command Line Interface (CLI)**: Implement a simple CLI that lets users interact with the script, providing options like help, version information, and settings via command line arguments.
 5. **Performance Metrics**: Display metrics such as execution time and summary length, showing an understanding of performance evaluation in AI applications.
+6. **Error Handling**: Robust error handling to manage common issues like network failures, invalid input, or model loading errors.
 
 ## Installation
 
@@ -16,7 +17,6 @@ This Python script utilizes transformer-based models from the Hugging Face Trans
    ```
    git clone https://github.com/jaydxyz/ai-powered-text-summarization.git
    ```
-
 2. Install the required dependencies:
    ```
    pip install -r requirements.txt
@@ -43,7 +43,6 @@ Examples:
 ```
 python summarizer.py --text "Your long text here..." --max_length 100 --style bullet --do_sample
 ```
-
 ```
 python summarizer.py --url "https://example.com" --model t5-small --min_length 50
 ```
@@ -52,7 +51,18 @@ python summarizer.py --url "https://example.com" --model t5-small --min_length 5
 
 - **Language & Libraries**: Python, `transformers` for the AI model, `beautifulsoup4` and `requests` for scraping text from URLs, `argparse` for CLI implementation.
 - **Model Deployment**: Use a lightweight model or distillation techniques if the focus is on speed and efficiency, or demonstrate the use of more complex models for better accuracy.
-- **Error Handling**: Robust error handling to manage common issues like network failures, invalid input, or model loading errors.
+- **Error Handling**: The script now includes comprehensive error handling for various scenarios:
+  - Network errors when fetching URLs
+  - Invalid or missing input (text or URL)
+  - Issues during model loading or text summarization
+  - Timeout for URL requests to prevent hanging on slow or unresponsive websites
+
+## Recent Improvements
+
+1. Enhanced error handling and input validation
+2. Added a timeout for URL requests
+3. Improved bullet point formatting in the summary output
+4. More informative error messages for different types of failures
 
 ## License
 
