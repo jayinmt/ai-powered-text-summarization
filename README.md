@@ -15,7 +15,7 @@ This Python script utilizes transformer-based models from the Hugging Face Trans
 
 1. Clone the repository:
    ```
-   git clone https://github.com/jaydxyz/ai-powered-text-summarization.git
+   git clone https://github.com/jayinmt/ai-powered-text-summarization.git
    ```
 2. Install the required dependencies:
    ```
